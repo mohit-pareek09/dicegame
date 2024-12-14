@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="./images/dice6.png" height="200px" onload=""/>
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="./images/dice6.png" height="200px"/>
+      </div>
+    </div>
+
+    <footer>www 🎲 App Brewery 🎲 com</footer>
+    <script>
+      var num1=Math.ceil(Math.random()*6);
+      var num2=Math.ceil(Math.random()*6);
+      
+  
+      document.querySelector(".dice .img1").setAttribute("src",`./images/dice${num1}.png`);
+      document.querySelector(".dice .img2").setAttribute("src",`./images/dice${num2}.png`);
+
+      if(num1>num2){
+        document.querySelector("h1").innerHTML="Player 1 win";
+      }
+      else if (num1==num2) {
+        document.querySelector("h1").innerHTML="Match Tie";
+      } else {
+        document.querySelector("h1").innerHTML="Player 2 win";
+      }
+ 
+    </script>
+  </body>
+</html>
